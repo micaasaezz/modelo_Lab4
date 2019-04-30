@@ -1,0 +1,18 @@
+<h1>Listado</h1>
+<table border="1" style="width:100%">
+  <thead>
+    <th>MODELO</th><th>MARCA</th><th>PRECIO</th><th>PUERTAS</th><th>FOTO</th>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of lista">
+      <tr>
+        <td>{{item.modelo}}</td>
+        <td>{{item.marca}}</td>
+        <td>{{item.precio}}</td>
+        <td>{{item.cantidadPuertas}}</td>
+        <td><img src="{{item.RutaDeFoto}}"></td>
+        <td> <app-borrar [id]="item._id"></app-borrar> </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

@@ -1,0 +1,19 @@
+<h1>Formulario de Carga</h1>
+
+<form [formGroup]="formularioIngreso">
+  <input type="text" formControlName="modelo" placeholder="Ingrese modelo: "
+  [ngClass]="{sucess: formularioIngreso.controls.modelo.valid}"><br>
+  <input type="text" formControlName="marca" placeholder="Ingrese marca: "
+  [ngClass]="{sucess: formularioIngreso.controls.marca.valid}"><br>
+  <input type="text" formControlName="precio" placeholder="Ingrese precio: "
+  [ngClass]="{sucess: formularioIngreso.controls.precio.valid}"><br>
+  <select formControlName="puertas" [ngClass]="{sucess: formularioIngreso.controls.puertas.valid}">
+    <option value="3">3</option>
+    <option value="5" selected>5</option>
+  </select><br>
+  <input type="file" formControlName="foto" placeholder="Ingrese foto: "
+  [ngClass]="{sucess: formularioIngreso.controls.foto.valid}"><br><br>
+
+  <button type="submit" (click)="IngresarAuto()"
+  [disabled]="formularioIngreso.invalid">Aceptar</button><button type="reset">Limpiar</button>
+</form>
